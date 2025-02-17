@@ -57,7 +57,7 @@
 }
 
 h3 {
-  font-family: "Times New Roman", serif;
+  font-family: 'Raleway', sans-serif;
   font-size: clamp(2rem, 5vw, 80px);
   font-weight: lighter;
   white-space: nowrap;

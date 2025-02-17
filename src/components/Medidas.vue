@@ -112,13 +112,13 @@ img {
 }
 
 @media (max-width: 768px) {
+  h3 {
+    font-size: 5.5vw;
+  }
+  
   #medidas {
     flex-direction: column; /* Muda para coluna para telas menores */
     gap: 1.5rem;
-  }
-
-  h3 {
-    font-size: 5.5vw;
   }
 
   .list-group li,

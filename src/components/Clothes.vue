@@ -44,8 +44,8 @@ import 'swiper/css/pagination';
 }
 
 h3 {
-  font-family: "Times New Roman", serif;
-  font-size: 80px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 6vw;
   font-weight: lighter;
   margin-bottom: 2rem;
 }
@@ -62,5 +62,17 @@ img {
   height: auto;
   display: block;
   margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  h3 {
+    font-size: 5vw;
+  }
+}
+
+@media (max-width: 768px) {
+  h3 {
+    font-size: 5.5vw;
+  }
 }
 </style>

@@ -25,7 +25,7 @@
 }
 
 h3 {
-  font-family: "Times New Roman", serif;
+  font-family: 'Raleway', sans-serif;
   font-size: 6vw;
   font-weight: lighter;
 }
