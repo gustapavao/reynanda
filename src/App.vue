@@ -6,6 +6,7 @@ import Clothes from "./components/Clothes.vue";
 import Medidas from "@/components/Medidas.vue";
 import Instagram from "@/components/Instagram.vue";
 import TikTok from "@/components/TikTok.vue";
+import ContrateMe from "@/components/Contrate-me.vue";
 
 </script>
 
@@ -18,6 +19,8 @@ import TikTok from "@/components/TikTok.vue";
     <Medidas></Medidas>
     <Instagram></Instagram>
     <TikTok></TikTok>
+    <ContrateMe></ContrateMe>
+
 <!--    <div class="wrapper">-->
 <!--      <nav>-->
 <!--        <RouterLink to="/">Home</RouterLink>-->

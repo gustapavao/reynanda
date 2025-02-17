@@ -1,19 +1,35 @@
 <script setup>
-
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 </script>
 
 <template>
   <div class="spacing"></div>
   <div class="clothes">
-    <h3>
-      Vestuário
-    </h3>
-    <img id="img1" src="@/assets/vestuario-1.png" alt="">
-    <img id="img2" src="@/assets/vestuario-2.png" alt="">
-    <img id="img3" src="@/assets/vestuario-1.png" alt="">
+    <h3>Vestuário</h3>
+    <swiper
+        :modules="[Navigation, Pagination, Autoplay]"
+        :spaceBetween="10"
+        :slidesPerView="1"
+        :navigation="true"
+        :pagination="{ clickable: true }"
+        :autoplay="{ delay: 3000, disableOnInteraction: false }"
+        class="swiper-container"
+    >
+      <swiper-slide>
+        <img src="@/assets/vestuario-1.png" alt="Vestuário 1" />
+      </swiper-slide>
+      <swiper-slide>
+        <img src="@/assets/vestuario-2.png" alt="Vestuário 2" />
+      </swiper-slide>
+      <swiper-slide>
+        <img src="@/assets/about-me-photo.png" alt="Vestuário 3" />
+      </swiper-slide>
+    </swiper>
   </div>
-
-
 </template>
 
 <style scoped>
@@ -23,35 +39,28 @@
 
 .clothes {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
 }
 
-h3{
+h3 {
   font-family: "Times New Roman", serif;
-  transform: rotate(-90deg);
   font-size: 80px;
   font-weight: lighter;
+  margin-bottom: 2rem;
 }
 
-img{
+.swiper-container {
+  width: 100%;
+  max-width: 600px;
   height: auto;
-  width: auto;
 }
 
-#img1{
-  margin-left: -2rem;
-  padding-bottom: 8rem;
-  margin-right: 4px;
-}
-
-#img2{
-  padding-top: 8rem;
-}
-
-#img3 {
-  padding-bottom: 8rem;
-  margin-right: 4px;
+img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 </style>
