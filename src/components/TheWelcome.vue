@@ -1,5 +1,18 @@
 <script setup>
-//const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
+import { ref } from 'vue';
+
+const showPopup = ref(false);
+const email = 'reynandarch@gmail.com';
+
+const openEmailClient = () => {
+  window.location.href = `mailto:${email}`;
+};
+
+const copyEmail = () => {
+  navigator.clipboard.writeText(email).then(() => {
+    alert('E-mail copiado para a área de transferência!');
+  });
+};
 </script>
 
 <template>
@@ -8,9 +21,21 @@
       <h4>Portfólio de Modelo</h4>
       <h1>Reynanda</h1>
       <h1>Rocha</h1>
-      <button>Entre em contato comigo</button>
+      <button @click="showPopup = true">Entre em contato comigo</button>
     </div>
     <img src="@/assets/welcome-photo.png" alt="Foto de boas-vindas">
+  </div>
+
+  <!-- Pop-up -->
+  <div v-if="showPopup" class="popup-overlay">
+    <div class="popup">
+      <p>Meu e-mail: {{ email }}</p>
+      <div class="popup-buttons">
+        <button @click="openEmailClient">Abrir E-mail</button>
+        <button @click="copyEmail">Copiar E-mail</button>
+      </div>
+      <button @click="showPopup = false" class="close-popup">Fechar</button>
+    </div>
   </div>
 </template>
 
@@ -84,6 +109,61 @@ button:hover:after {
 img {
   max-width: 100%;
   height: auto;
+}
+
+/* Estilo do Pop-up */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.popup-buttons {
+  margin-top: 1rem;
+}
+
+.popup-buttons button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  margin: 0.5rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.popup-buttons button:hover {
+  background-color: #45a049;
+}
+
+.close-popup {
+  background-color: #f44336;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  margin-top: 1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.close-popup:hover {
+  background-color: #e60000;
 }
 
 @media (max-width: 768px) {
